@@ -13,13 +13,13 @@
 
 <div align="center">
   <a href="https://github.com/taoufikayoub/BlindSupportApp">
-    <img src="test/images/self-driving.png" alt="Logo" width="80" height="80">
+    <img src="images/self-driving.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Self Driving Vehicle Control</h3>
 
   <p align="center">
-    Smart glasses that helps blind people in their daily life using machine learning and a mobile app.
+    Implementation of a longitudinal and lateral controller in python for the CARLA simulator.
     <br />
     <a href="https://github.com/taoufikayoub/BlindSupportApp"><strong>Explore the docs »</strong></a>
     <br />
@@ -58,134 +58,41 @@
 ## About The Project
 
 This project was part of the Self-Driving Cars Specialization by the University of Toronto on Coursera.
+The goal is to control the vehicle to follow a race track by navigating through preset waypoints, and test and validate the results on CARLA's 3D environnement and matplotlib graphs. 
 
-### Built With
+### Control Technologies used
 
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.dev/)
-- [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+Longitudinal control:
+- [PID Control](https://en.wikipedia.org/wiki/PID_controller)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Getting Started
-
-This is how you can run this project on your local machine.
-
-### Prerequisites
-
-- An ESP32-CAM with Webserver Installed connected to your local WIFI
-
-- Expo CLI Installed on your machine
-
-  ```sh
-  npm install expo-cli@latest -g
-  ```
+Lateral control:
+- [Stanley Control](https://en.wikipedia.org/wiki/Stanley_(vehicle))
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## How to Install the ML server
+## Demo
 
-You need to install python v3 or a higher version to run this project on your machine.
+These are the results of running the simulation with the given course inputs.
 
-Clone the repository and `cd` to the server folder, open your terminal and type the following commands:
+### CARLA Simulation Environment
 
-- Clone the repo and enter the project directory
+<img src="images/CARLA_Simulation.png" alt="CARLA Simulation">
 
-  ```sh
-  git clone https://github.com/taoufikayoub/BlindSupportApp.git
-  cd BlindSupportApp
-  cd server
-  ```
+### Controls Feedback & Trajectory trace
 
-- Create a virtual environment:
-
-  ```sh
-  python -m venv venv
-  ```
-
-- Activate the virtual environment:
-
-  ```sh
-  ./venv/Scripts/activate
-  ```
-
-- Install dependencies:
-
-  ```sh
-  pip install -r ./requirements.txt
-  ```
-
-- Run the project:
-
-  ```sh
-  flask run
-  ```
+<img src="images/Controls_Trajectory.png" alt="Control Feedbacks and Trajectory">
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## How to Install the Mobile App
+## How to run
 
-Open a new terminal, and type the following commands:
+Please follow these instructions:
 
-- Enter mobile project folder
+1) Follow the CARLA Installation guide HERE to install the CARLA simulator
 
-  ```sh
-  cd mobile
-  ```
+2) Move the folder "Vehicle_Control" folder into the subfolder folder "PythonClient" inside the "CarlaSimulator" (root) folder.
 
-- Install NPM packages
-
-  ```sh
-  expo install
-  ```
-
-- Enter your routes in `config.ts`
-
-  ```js
-  export const ESP32_CAM_URI = "ENTER YOUR ESP32-CAM IP ADDRESS"; // You will get it from the ESP32-CAM Serial on loading
-  export const SERVER_URI = "ENTER THE FLASK SERVER ADDRESS HERE"; // You will get it from the FLASK server debug messages on Loading too
-  ```
-
-- Run the app
-
-  ```sh
-  expo install
-  ```
-
-- Install Expo Go on your android or iOS device to run it there
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Usage
-
-- Wear the smart glasses
-
-- Use your phone to recognize the people in front of you
-
-- You can add the name of the people to the server to recognize them later
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License.
+3) Run module_7.py
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
